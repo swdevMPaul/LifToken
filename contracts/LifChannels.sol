@@ -97,7 +97,7 @@ contract LifChannels {
     // Create unique identifier from sender, receiver and current block timestamp
     bytes32 channelId = getChannelId(msg.sender, receiver, nonce);
 
-    // Check taht teh channel not exist
+    // Check that the channel not exist
     require(channels[channelId].deposit == 0);
     require(channels[channelId].nonce == 0);
     require(closingRequests[channelId].closeTime == 0);
@@ -115,7 +115,7 @@ contract LifChannels {
    * @dev Starts a close channel request form the sender
    * @param receiver address, the receiver of the channel
    * @param nonce uint8, the nonce number of the channel
-   * @param balance uint256, the final balance of teh receiver
+   * @param balance uint256, the final balance of the receiver
    */
   function uncooperativeClose(
     address receiver,
