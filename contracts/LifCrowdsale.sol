@@ -11,7 +11,7 @@ import "./LifMarketValidationMechanism.sol";
    @title Crowdsale for the Lif Token Generation Event
 
    Implementation of the Lif Token Generation Event (TGE) Crowdsale: A 2 week
-   fixed price, uncapped token sale, with a discounted ratefor contributions
+   fixed price, uncapped token sale, with a discounted rate for contributions
    ìn the private presale and a Market Validation Mechanism that will receive
    the funds over the USD 10M soft cap.
    The crowdsale has a minimum cap of USD 5M which in case of not being reached
@@ -57,8 +57,8 @@ contract LifCrowdsale is Ownable, Pausable {
   // to wei using `weiPerUSDinTGE`. Funds over this cap go to the MVM.
   uint256 public maxFoundationCapUSD = 10000000;
 
-  // Maximum amount from the TGE that makes the MVM to last for 24 months. If
-  // funds from the TGE exceed this amount, the MVM will last for 24 months.
+  // Maximum amount from the TGE that makes the MVM to last for 24 months. 
+  // If funds from the TGE exceed this amount, the MVM will last for 24 months.
   uint256 public MVM24PeriodsCapUSD = 40000000;
 
   // Conversion rate from USD to wei to use during the TGE.
@@ -96,7 +96,7 @@ contract LifCrowdsale is Ownable, Pausable {
   // Address of the MVM created at the end of the crowdsale
   LifMarketValidationMechanism public MVM;
 
-  // Tracks the wei sent per address during the 2 week TGE. This is the amount
+  // Tracks the wei sent per address during the 2 week TGE. This is the ammount
   // that can be claimed by each address in case the minimum cap is not reached
   mapping(address => uint256) public purchases;
 
@@ -238,7 +238,7 @@ contract LifCrowdsale is Ownable, Pausable {
 
   /**
      @dev Allows to add the address and the amount of wei sent by a contributor
-     in the private presale. Can only be called by the owner before the beginning
+     in the private presale. Can only be called by the owner before the begining
      of TGE
 
      @param beneficiary Address to which Lif will be sent
